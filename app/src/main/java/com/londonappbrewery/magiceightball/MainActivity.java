@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
         final ImageView Balldisplay;
         Balldisplay = findViewById(R.id.image_eightBall);
-        final int[] ballArray = {
+        final int[] ballArray = new int[] {
                 R.drawable.ball1,
                 R.drawable.ball2,
                 R.drawable.ball3,
@@ -32,8 +32,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Log.d ( "Magic8Balls", " The Button has been Click!");
                 Random RandomnumberGenerator = new Random();
-                int number = RandomnumberGenerator.nextInt(4);
-                Balldisplay.setImageResource(ballArray[number]);
+                int number = RandomnumberGenerator.nextInt(5);
+                int imageResourceId = ballArray[number];
+                Balldisplay.setImageResource(imageResourceId);
 
             }
         });
